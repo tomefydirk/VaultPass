@@ -1,6 +1,4 @@
-use std::{alloc::System, fmt::format};
-
-use eframe::{egui::{self,Button, CentralPanel, Color32, Context, Frame, Pos2, Rect, Stroke, TextEdit, Ui,Vec2}};
+use eframe::egui::{self, Button, CentralPanel, Color32, Context, Frame, Pos2, Rect, SidePanel, Stroke, TextEdit, Ui, Vec2};
  #[derive(Default)]
 pub struct Vaultpass{
     pub nom_obtained:String,
@@ -23,6 +21,7 @@ impl eframe::App for Vaultpass{
         CentralPanel::default().show(ctx, |ui|{
            ui.vertical(|ui|{
             add_label_field(ui,"Nom".to_string() , &mut self.nom_obtained);
+            ui.end_row();
             add_label_field(ui,"Mot de passe".to_string() , &mut self.pass_obtained);
             if ui.button("Soummettre").clicked(){
                 
