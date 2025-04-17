@@ -22,8 +22,8 @@ impl eframe::App for Vaultpass{
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         CentralPanel::default().show(ctx, |ui|{
            ui.vertical(|ui|{
-            add_label_field(ui,format!("{}","Nom") , &mut self.nom_obtained);
-            add_label_field(ui,format!("{}","Mot de passe") , &mut self.pass_obtained);
+            add_label_field(ui,"Nom".to_string() , &mut self.nom_obtained);
+            add_label_field(ui,"Mot de passe".to_string() , &mut self.pass_obtained);
             if ui.button("Soummettre").clicked(){
                 
             }
